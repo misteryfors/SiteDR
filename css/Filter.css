@@ -1,0 +1,30 @@
+.filterBox{
+    width: 90%;
+    min-height: 600px;
+    border: 1px solid #000000;
+    border-radius: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    box-shadow:  4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.filterBox .filterSlot{
+    margin: 10px;
+    height: 50px;
+    width: 90%;
+    display: flex;
+}
+.filterBox .filterSlot .filterTag{
+    line-height: 50px;
+    text-align: center;
+    flex: 50px;
+}
+.filterBox .filterSlot .filterInput{
+    margin: 5px;
+    flex: 300px;
+    height: 70%;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 30px;
+}
