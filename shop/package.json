@@ -1,0 +1,73 @@
+{
+  "name": "shop",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "animate.css": "^4.1.1",
+    "axios": "^1.2.2",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "bootstrap": "^5.2.3",
+    "browserify-zlib": "^0.2.0",
+    "express": "^4.18.2",
+    "http-proxy-middleware": "^2.0.6",
+    "https": "^1.0.0",
+    "https-browserify": "^1.0.0",
+    "nginx": "^1.0.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-dual-range-slider": "^1.0.4",
+    "react-helmet": "^6.1.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.6.1",
+    "react-router-sitemap-generator": "^0.0.8",
+    "react-scripts": "5.0.1",
+    "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.2",
+    "web-vitals": "^2.1.4",
+    "wowjs": "^1.1.3"
+  },
+  "scripts": {
+    "build:staging": "env-cmd -f .env.staging npm run build",
+    "start": "set PORT=443 && react-scripts start",
+    "start-http": "http-server -p 3000",
+    "start-https": "https-server -p 443 --ssl-cert ../../certificate.csr --ssl-key ../../your_domainkey.key",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint . --ext .js ",
+    "sitemap": "babel-node src/sitemap-generator.js"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^8.31.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.4",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.32.0",
+    "react-sitemap-stevedevops": "^0.4.0"
+  }
+}
