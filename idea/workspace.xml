@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9a683e4e-b93d-41c1-b679-b835440d98f1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/shop/.env.development" beforeDir="false" afterPath="$PROJECT_DIR$/shop/.env.development" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/helmet.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/helmet.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/shop/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/shop/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/shop/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/public/image/Profile.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/shop/public/image/Profile.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/public/image/Заглушка.png" beforeDir="false" afterPath="$PROJECT_DIR$/shop/public/image/Заглушка.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/shop/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/shop/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/public/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shop/public/sitemap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/setupProxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/setupProxy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/sitemap-builder.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/sitemap-builder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/shop/sitemap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Content.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Content.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/FormPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/FormPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/UserPage/CPProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/UserPage/CPProfile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/AdminPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/AdminPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Chats/CPChats.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Chats/CPChats.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Chats/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Chats/message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Orders/CPOrders.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Orders/CPOrders.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Orders/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Orders/Products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Orders/img.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Orders/img.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Orders/imgList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Orders/imgList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Products/CPProducts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Products/CPProducts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Products/NewProduct.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Products/NewProduct.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Products/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Products/Products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Products/img.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Products/img.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Products/imgList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Products/imgList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Products/modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/UserPage/admin/Products/modal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/UserPage/client/ClientPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/UserPage/client/ClientPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/auntification/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/auntification/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/auntification/Registration-Authorization.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/auntification/Registration-Authorization.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/auntification/Registration.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/auntification/Registration.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/info/info.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/info/info.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/info/modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/info/modal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/layout/Layout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/layout/Layout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/moreInfo/moreInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/moreInfo/moreInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/order/newOrder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/order/newOrder.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/order/order.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/order/order.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/shop/filters/filters.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/shop/filters/filters.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/shop/filters/multiRangeSlider/MultiRangeSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/shop/filters/multiRangeSlider/MultiRangeSlider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/shop/filters/multiRangeSlider/multiRangeSlider.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/shop/filters/multiRangeSlider/multiRangeSlider.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/shop/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/shop/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/shop/products/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/shop/products/Products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/shop/products/ProductsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/shop/products/ProductsList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/shop/products/productPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/shop/products/productPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Pages/slider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Pages/slider.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/Routs.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/Routs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/actions/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/actions/message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/actions/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/actions/order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/actions/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/actions/product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/actions/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/actions/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/components/MicroComponents/input/Input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/components/MicroComponents/input/Input.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/components/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/components/Product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/components/css/Chat.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/components/css/Chat.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/components/css/Filter.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/components/css/Filter.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/components/css/NewProd.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/components/css/NewProd.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/components/css/Pagination.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/components/css/Pagination.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/components/css/Product.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/components/css/Product.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/components/css/UsersPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/components/css/UsersPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/components/css/authorization.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/components/css/authorization.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/components/css/imgList.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/components/css/imgList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/components/css/inputs.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/components/css/inputs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/components/css/loading.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/components/css/loading.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/components/css/modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/components/css/modal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/components/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/components/css/profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/components/css/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/components/css/search.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/components/css/shablon.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/components/css/shablon.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/components/css/shortProduct.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/components/css/shortProduct.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/components/universalModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/components/universalModal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/reducers/chatsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/reducers/chatsReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/reducers/fileReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/reducers/fileReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/reducers/userReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/reducers/userReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/sitemap/sitemap.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/sitemap/sitemap.cjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/sitemap/sitemapConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/sitemap/sitemapConfig.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Less File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/shop" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2JUPlgqPuSV3cuMKoWzfJtuBWWj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Ssite/server&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PhpStorm 2022.1\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Ssite\server" />
+      <recent name="F:\Ssite\server\middleware" />
+      <recent name="F:\Ssite\shop\src\components" />
+      <recent name="F:\Ssite\shop\public\image" />
+      <recent name="F:\Ssite\shop\src\Pages\info" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Ssite\.cert" />
+      <recent name="F:\Ssite\shop" />
+      <recent name="F:\Ssite\server\imgs\orders" />
+      <recent name="F:\Ssite\shop\src" />
+      <recent name="F:\Ssite\shop\src\Pages\UserPage\admin\Products" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Node.js.Test.js">
+    <configuration name="Test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$USER_HOME$/Desktop/web-main/untitled/Test.js" working-dir="$USER_HOME$/Desktop/web-main/untitled">
+      <method v="2" />
+    </configuration>
+    <configuration name="build.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/shop/src/sitemap/build.js" working-dir="$PROJECT_DIR$/shop/src/sitemap">
+      <method v="2" />
+    </configuration>
+    <configuration name="sitemap-builder.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/shop/src/sitemap-builder.js" working-dir="$PROJECT_DIR$/shop/src">
+      <method v="2" />
+    </configuration>
+    <configuration name="sitemap-generator.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/shop/src/sitemap-generator.js" working-dir="$PROJECT_DIR$/shop/src/sitemap">
+      <method v="2" />
+    </configuration>
+    <configuration name="sitemap.cjs" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/shop/src/sitemap/sitemap.cjs" working-dir="$PROJECT_DIR$/shop/src/sitemap">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.Test.js" />
+        <item itemvalue="Node.js.sitemap-generator.js" />
+        <item itemvalue="Node.js.sitemap-builder.js" />
+        <item itemvalue="Node.js.sitemap.cjs" />
+        <item itemvalue="Node.js.build.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9a683e4e-b93d-41c1-b679-b835440d98f1" name="Changes" comment="" />
+      <created>1672129840995</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1672129840995</updated>
+      <workItem from="1672129842477" duration="2907000" />
+      <workItem from="1672170790121" duration="1967000" />
+      <workItem from="1672226949678" duration="2566000" />
+      <workItem from="1672328903887" duration="304000" />
+      <workItem from="1672340941630" duration="6037000" />
+      <workItem from="1672448647843" duration="609000" />
+      <workItem from="1672629566634" duration="537000" />
+      <workItem from="1672696863060" duration="2261000" />
+      <workItem from="1672760304119" duration="303000" />
+      <workItem from="1672764139763" duration="16461000" />
+      <workItem from="1672845382016" duration="9575000" />
+      <workItem from="1672937133390" duration="7630000" />
+      <workItem from="1672951600109" duration="14537000" />
+      <workItem from="1673051409266" duration="9539000" />
+      <workItem from="1673120755971" duration="9491000" />
+      <workItem from="1673231367610" duration="8838000" />
+      <workItem from="1673259931393" duration="24006000" />
+      <workItem from="1673489742083" duration="24955000" />
+      <workItem from="1673584707209" duration="9474000" />
+      <workItem from="1673597050766" duration="12579000" />
+      <workItem from="1673694082265" duration="1553000" />
+      <workItem from="1673770261372" duration="7121000" />
+      <workItem from="1673845255753" duration="31286000" />
+      <workItem from="1673935635435" duration="2706000" />
+      <workItem from="1673949767566" duration="16873000" />
+      <workItem from="1674023119034" duration="9955000" />
+      <workItem from="1674109924491" duration="7376000" />
+      <workItem from="1674288185477" duration="7783000" />
+      <workItem from="1674390756433" duration="13172000" />
+      <workItem from="1674453322046" duration="8224000" />
+      <workItem from="1674582552843" duration="1740000" />
+      <workItem from="1674637151791" duration="15119000" />
+      <workItem from="1674720491567" duration="627000" />
+      <workItem from="1674731710220" duration="16457000" />
+      <workItem from="1674814075443" duration="15131000" />
+      <workItem from="1674903099149" duration="1788000" />
+      <workItem from="1674992124404" duration="23333000" />
+      <workItem from="1675087919301" duration="19278000" />
+      <workItem from="1675192810377" duration="14299000" />
+      <workItem from="1675255438525" duration="8612000" />
+      <workItem from="1675682089694" duration="34750000" />
+      <workItem from="1675849399252" duration="2714000" />
+      <workItem from="1675926963057" duration="3612000" />
+      <workItem from="1676025912542" duration="23824000" />
+      <workItem from="1676104658294" duration="39972000" />
+      <workItem from="1676193052422" duration="11823000" />
+      <workItem from="1676272653827" duration="8648000" />
+      <workItem from="1676362798932" duration="9219000" />
+      <workItem from="1676447435131" duration="2896000" />
+      <workItem from="1676532267626" duration="5375000" />
+      <workItem from="1676618919530" duration="5184000" />
+      <workItem from="1676711766542" duration="16517000" />
+      <workItem from="1676801468066" duration="1818000" />
+      <workItem from="1676879822371" duration="12301000" />
+      <workItem from="1676976577114" duration="1183000" />
+      <workItem from="1677068389668" duration="1205000" />
+      <workItem from="1677144397578" duration="7748000" />
+      <workItem from="1677230798605" duration="9560000" />
+      <workItem from="1677318197798" duration="2852000" />
+      <workItem from="1677496387763" duration="13117000" />
+      <workItem from="1677577948029" duration="2043000" />
+      <workItem from="1677645883680" duration="3829000" />
+      <workItem from="1677660099926" duration="631000" />
+      <workItem from="1677748846050" duration="2438000" />
+      <workItem from="1677826497814" duration="9782000" />
+      <workItem from="1677917187419" duration="16842000" />
+      <workItem from="1678005140366" duration="19052000" />
+      <workItem from="1678093925524" duration="5755000" />
+      <workItem from="1678179850178" duration="1908000" />
+      <workItem from="1678274859443" duration="1496000" />
+      <workItem from="1678359957119" duration="41514000" />
+      <workItem from="1678610828451" duration="1301000" />
+      <workItem from="1678613985980" duration="16428000" />
+      <workItem from="1678703835974" duration="150121000" />
+      <workItem from="1679515674579" duration="1999000" />
+      <workItem from="1680166333293" duration="10132000" />
+      <workItem from="1680594635360" duration="9031000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
