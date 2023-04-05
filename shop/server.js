@@ -33,8 +33,8 @@ app.get('*', (req, res, next) => {
 });
 
 const httpsServer = https.createServer({
-    key: fs.readFileSync('../.cert/your_domain.key.txt'),
-    cert: fs.readFileSync('../.cert/certificate.csr')
+    key: fs.readFileSync('../cert/your_domain.key.txt'),
+    cert: fs.readFileSync('../cert/certificate.csr')
 }, app);
 
 const httpServer = http.createServer(app);
