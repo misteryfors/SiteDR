@@ -1,0 +1,8 @@
+main{
+    z-index: -1;
+    top: 100px;
+    display: block;
+    width: 100%;
+    background-color: #a7b0c1;
+    min-width: 1010px;
+}
