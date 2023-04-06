@@ -38,7 +38,7 @@ router.post('/registration',
         const sUser = await User.findOne({_id:'641336ac79efeb6dad283d86'})
         const chat = new Chat({firstUser:newUser.id,secondUser:'641336ac79efeb6dad283d86',firstUserName:fUser.name,secondUserName:sUser.name,messages:[],notice:'Поздравляем вы зарегестрированны'})
         await chat.save()
-        await fileService.createDir(`${req.filepath+'/'+'orders'}\\${newUser.id}`)
+        await fileService.createDir(`${req.filepath}\\orders\\${newUser.id}`)
         console.log(newUser)
         console.log(token)
         return res.json({
