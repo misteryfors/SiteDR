@@ -11,14 +11,14 @@ class FileController {
 
             const {UID,DIR} = await req.body
             console.log(UID,DIR,'------------------')
-            let path = `${req.filepath+'/'+DIR}\\${UID}`
+            let path = req.filepath+'/'+DIR+'/'+{UID}
             console.log(path)
             if (!fs.existsSync(path)) {
                 await fileService.createDir(path)
             }
 
             console.log(path)
-            if (!fs.existsSync(`${path}\\${file.name}`)) {
+            if (!fs.existsSync(path+'/'+file.name)) {
                 console.log('name : '+file.name)
             }
             else
@@ -26,13 +26,13 @@ class FileController {
                 let fileExt = file.name.split('.').pop();
                 let baseName = file.name.slice(0, -fileExt.length - 1);
                 let i = 1;
-                while (fs.existsSync(`${path}\\${file.name}`)) {
-                    file.name = `${baseName}_${i}.${fileExt}`;
+                while (fs.existsSync(path+'/'+file.name)) {
+                    file.name = baseName+i+'.'+fileExt;
                     i++;
                     console.log('fname : '+file.name)
                 }
             }
-            path = `${path}\\${file.name}`
+            path = path+'/'+file.name
             file.mv(path)
             let fname=file.name;
             return res.json({fname})
