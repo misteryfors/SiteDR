@@ -69,7 +69,7 @@ router.get('/getProducts',
         const maxPrice=req.query.maxPrice || 99999999999
         const priceFilter={$gte:minPrice,$lte:maxPrice}
         console.log(req.query.revers)
-        const query={ $and: [{price:priceFilter,name:{$regex:req.query.name,$options:"i"},type:{$regex:req.query.type,$options:"i"},mark:{$regex:req.query.mark,$options:"i"}},{$or:[{name:{$regex:req.query.all,$options:"i"}},{type:{$regex:req.query.all,$options:"i"}},{mark:{$regex:req.query.all,$options:"i"}}]}]}
+        const query={ $and: [{price:priceFilter,name:{$regex:req.query.name,$options:"$i"},type:{$regex:req.query.type,$options:"$i"},mark:{$regex:req.query.mark,$options:"$i"}},{$or:[{name:{$regex:req.query.all,$options:"$i"}},{type:{$regex:req.query.all,$options:"$i"}},{mark:{$regex:req.query.all,$options:"$i"}}]}]}
         try {
 
             const count = await Product.find(query).count()

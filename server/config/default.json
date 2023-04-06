@@ -1,6 +1,6 @@
 {
   "serverPort": 442,
-  "URL": "mongodb://127.0.0.1:27017/D&R",
+  "URL": "mongodb+srv://mistfors:yjdbrjd9271@cluster0.lemukar.mongodb.net/test/D&R",
   "secretKey": "termostat",
   "filePath": "D:\\reactpractice\\R-D-main\\server\\imgs",
   "staticPath": "D:\\reactpractice\\R-D-main\\server\\static"
