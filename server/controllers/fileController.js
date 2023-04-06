@@ -11,7 +11,7 @@ class FileController {
 
             const {UID,DIR} = await req.body
             console.log(UID,DIR,'------------------')
-            let path = req.filepath+'/'+DIR+'/'+{UID}
+            let path = req.filepath+'/'+DIR+'/'+UID
             console.log(path)
             if (!fs.existsSync(path)) {
                 await fileService.createDir(path)
