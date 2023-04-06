@@ -28,7 +28,7 @@ router.post('/createProduct',
             const {name, type, mark, price, shortDescription, description, images, privateComment} =req.body
             const product = new Product({name, type, mark, price, shortDescription, description, images, privateComment})
             await product.save()
-            await fileService.createDir(`${req.filepath}\\products\\${product.id}`)
+            await fileService.createDir(req.filepath+'/products/'+product.id)
 
             return res.json({product})
         }catch (e){
