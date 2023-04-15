@@ -102,7 +102,7 @@ router.get('/deleteOrder',authMiddleware,
         try {
             const user = await User.findOne({_id: req.user.id})
             if(user.role=='admin') {
-                fileService.deleteFile(`${req.filepath+'/'+'orders'}\\${req.query.UID}`)
+                fileService.deleteFile(req.filepath+'/orders/'+req.query.UID)
             const order = await Order.findOneAndDelete({_id:req.query.UID})
             return res.json({order})
             }

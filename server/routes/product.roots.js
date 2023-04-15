@@ -19,7 +19,7 @@ router.post('/createProduct',
     ],
     async (req,res)=>{
         try {
-            console.log("aeaea")
+            console.log("aeaea1")
             const errors = validationResult(req)
             if (!errors.isEmpty()) {
                 return res.status(400).json({message:'Uncorrect request', errors})
@@ -28,7 +28,7 @@ router.post('/createProduct',
             const {name, type, mark, price, shortDescription, description, images, privateComment} =req.body
             const product = new Product({name, type, mark, price, shortDescription, description, images, privateComment})
             await product.save()
-            await fileService.createDir(req.filepath+'/products/'+product.id)
+            await fileService.createDir(req.filepath+'\\products\\'+product.id)
 
             return res.json({product})
         }catch (e){
@@ -69,7 +69,7 @@ router.get('/getProducts',
         const maxPrice=req.query.maxPrice || 99999999999
         const priceFilter={$gte:minPrice,$lte:maxPrice}
         console.log(req.query.revers)
-        const query={ $and: [{price:priceFilter,name:{$regex:req.query.name,$options:"$i"},type:{$regex:req.query.type,$options:"$i"},mark:{$regex:req.query.mark,$options:"$i"}},{$or:[{name:{$regex:req.query.all,$options:"$i"}},{type:{$regex:req.query.all,$options:"$i"}},{mark:{$regex:req.query.all,$options:"$i"}}]}]}
+        const query={ $and: [{price:priceFilter,name:{$regex:req.query.name,$options:"i"},type:{$regex:req.query.type,$options:"i"},mark:{$regex:req.query.mark,$options:"i"}},{$or:[{name:{$regex:req.query.all,$options:"i"}},{type:{$regex:req.query.all,$options:"i"}},{mark:{$regex:req.query.all,$options:"i"}}]}]}
         try {
 
             const count = await Product.find(query).count()
@@ -115,7 +115,7 @@ router.get('/deleteProduct',authMiddleware,
             const user = await User.findOne({_id: req.user.id})
             if(user.role=='admin') {
 
-                fileService.deleteFile(`${req.filepath+'/'+'products'}\\${req.query.UID}`)
+                fileService.deleteFile(req.filepath+'/products/'+req.query.UID)
 
                 const product = await Product.findOneAndDelete({_id: req.query.UID})
                 return res.json({product})
