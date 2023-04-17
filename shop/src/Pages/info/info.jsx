@@ -77,14 +77,14 @@ const InfoPage = () => {
                         по сервисному обслуживанию, ремонту или покупке бытовой техники:
                         <ul>
                             <li onMouseEnter={() => setMainImg('stiralka.png')}>Стиральных машин</li>
-                            <li onMouseEnter={() => setMainImg('Holodos.png')}>Холодильников</li>
+                            <li onMouseEnter={() => setMainImg('holodos.png')}>Холодильников</li>
                             <li onMouseEnter={() => setMainImg('CoffeeM.png')}>Кофемашин</li>
                             <li onMouseEnter={() => setMainImg('Posyda.png')}>Посудомоечные машины</li>
                             <li onMouseEnter={() => setMainImg('Plita.png')}>Варочные панели</li>
                             И продаже
-                            <li onMouseEnter={() => setMainImg('Holodos.png')}>Холодильников</li>
+                            <li onMouseEnter={() => setMainImg('holodos.png')}>Холодильников</li>
                             <li onMouseEnter={() => setMainImg('stiralka.png')}>Стиральных машин</li>
-                            <li onMouseEnter={() => setMainImg('Plita.png')}>Варачных панелей</li>
+                            <li onMouseEnter={() => setMainImg('Plita.png')}>Варочных панелей</li>
                             <li onMouseEnter={() => setMainImg('duh.png.webp')}>Духовые шкафы</li>
                         </ul>
                     </div>
