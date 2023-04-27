@@ -80,7 +80,7 @@ const ProductPage=()=>{
                                         </div>
                                         <div className="fullDescription">
                                             <label>Дополнительно:</label>
-                                            <p>{product.fullDescription}</p>
+                                            <p>{product.description}</p>
                                         </div>
                                     </div>
                                 </div>

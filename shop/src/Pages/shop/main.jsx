@@ -93,7 +93,8 @@ const MainPage = () => {
             </Helmet>
                     <div className="searchBlock">
                         <div className="searchBox">
-                            <input className="search" placeholder="Поиск" style={{outline:'none'}} value={all} onChange={(e) => setAll(e.target.value)}/>
+                            <input className="search" placeholder="Поиск" style={{outline:'none'}} onKeyDown={(e)=>{if (e.keyCode === 13) filtr()}}  value={all} onChange={(e) => setAll(e.target.value)}/>
+
                         </div>
 
                             <NavLink style={{width: '15%',marginLeft:'19px'}} to={'/NewOrder'}>
