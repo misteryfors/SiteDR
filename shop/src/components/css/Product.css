@@ -15,15 +15,51 @@
 .product{
     width: 100%;
     overflow: hidden;
-    border: 1px solid #00000078;
-    border-radius: 5px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border-radius: 10px;
     padding: 20px 0;
+    background-color:
+     rgb(229, 229, 229);
+    min-height: 570px;
+    transition: 0.2s ease-in;
+}
+
+.ice{
+    background: 
+    linear-gradient(
+          rgba(0, 0, 0, 0.05), 
+          rgba(0, 0, 0, 0.05)
+        ),  
+		url(../image/BackgroundShop/1623396810_10-phonoteka_org-p-prozrachnii-led-tekstura-krasivo-10.jpg);
+        background-size: cover;
+}
+
+.fire{
+    background:
+    linear-gradient(
+          rgba(0, 0, 0, 0.05), 
+          rgba(0, 0, 0, 0.05)
+        ),
+     url(../image/BackgroundShop/free-png.ru-12.png);
     background-color: white;
-    min-height: 500px;
+        background-position:center;
+}
+
+.water{
+    background:
+    linear-gradient(
+          rgba(0, 0, 0, 0.05), 
+          rgba(0, 0, 0, 0.05)
+        ),
+    url(../image/BackgroundShop/1614563159_46-p-voda-na-belom-fone-64.png);
+    background-position:center;
+    background-size: cover;
 }
 
 .product:hover{
-    background-color: #e3e3e3;
+    background-color: #fafafa;
+    box-shadow: rgba(255, 255, 255, 0.4) 0px 0px 0px 2px, rgba(255, 255, 255, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.535) 0px 1px 0px inset;
+    transition: 0.2s ease-in;
 }
 
 .ProductsSlot{
@@ -95,11 +131,12 @@
     }
 
     .ProductsSlot{
-        width: 45%;
+        width: 90%;
     }
 
     .imageBox img{
-        height: 150px;
+        height: 100%;
+        width: 100%;
     }
 
     .text-block{

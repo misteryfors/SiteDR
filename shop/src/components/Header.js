@@ -7,6 +7,7 @@ import './css/fix.css'
 import ArrowUp from "../../src/components/image/uparrow.png"
 import {getNotice} from "../actions/user";
 import "animate.css"
+import {baseUrl} from "../globalSetings";
 import { initWow } from '../../src/wow/wow';
 import {getChats} from "../actions/message";
 export default function Header(){
@@ -63,12 +64,12 @@ export default function Header(){
         </div>
 
             <div className="Nav-mobile"  >
-                <img style={{height:'70px',width:'70px'}} id='btn-menu' onClick={toggleMenu} src={'https://master43.ru/image/menu.png'}/>
+                <img style={{height:'70px',width:'70px'}} id='btn-menu' onClick={toggleMenu} src={baseUrl+'/image/menu.png'}/>
                 <NavLink className="HeaderNav" to="/">
-                <img className="Logo-nav-mob" style={{height:'70px'}} src={'https://master43.ru/image/DaRmini.svg'}/>
+                <img className="Logo-nav-mob" style={{height:'70px'}} src={baseUrl+'/image/DaRmini.svg'}/>
                 </NavLink>
                 <NavLink style={{height:'70px'}} to="/User">
-                <img className="Auth-nav-mob" style={{height:'70px',width:'70px'}} src={'https://master43.ru/image/Profile.png'}/>
+                <img className="Auth-nav-mob" style={{height:'70px',width:'70px'}} src={baseUrl+'/image/Profile.png'}/>
                 </NavLink>
                 </div>
             {isMenuOpen && (

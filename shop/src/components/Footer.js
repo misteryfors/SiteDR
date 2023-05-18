@@ -3,6 +3,7 @@ import Help from '../../../shop/src/components/image/socials/phone-call.png'
 import Ok from '../../../shop/src/components/image/socials/telegram.png'
 import Vk from '../../../shop/src/components/image/socials/whatsapp.png'
 import DaRimg from '../../../shop/src/components/image/socials/DaRmini.svg'
+import {baseUrl} from "../globalSetings";
 import './css/Footer.css'
 export default function Footer(){
     return(
