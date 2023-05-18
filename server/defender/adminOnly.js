@@ -1,9 +1,9 @@
 const fileService = require('../services/fileService')
 const config = require('config')
 const fs = require('fs')
-const Product = require('../models/Product')
+const Product = require('../models/product.js')
 const {json} = require("express");
-const User = require("../models/User")
+const User = require("../models/user")
 
 class AdminOnly {
     async uploadFile(req, res) {
