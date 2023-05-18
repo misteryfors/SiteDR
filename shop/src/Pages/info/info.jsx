@@ -8,6 +8,13 @@ import "../../components/css/Arrow-info.css";
 import LogoImgFullScreen from "../../components/image/DaRmini.svg"
 import MapMarker from "../../components/image/mapmarker.png"
 import { initWow } from '../../wow/wow';
+import {baseUrl} from "../../globalSetings";
+import i1 from '../../../../shop/src/components/image/mainSlider/stiralka.png'
+import i2 from '../../../../shop/src/components/image/mainSlider/holodos.png'
+import i3 from '../../../../shop/src/components/image/mainSlider/CoffeeM.png'
+import i4 from '../../../../shop/src/components/image/mainSlider/Posyda.png'
+import i5 from '../../../../shop/src/components/image/mainSlider/Plita.png'
+import i6 from '../../../../shop/src/components/image/mainSlider/duh.png.webp'
 
 const InfoPage = () => {
     useEffect(() => {
@@ -55,7 +62,7 @@ const InfoPage = () => {
             </div>
             <Helmet>
                 <title>Главная</title>
-                <link rel="canonical" href="https://master43.ru" />
+                <link rel="canonical" href={baseUrl} />
                 <meta name="description" content="На нашем сайте мы предоставляем услуги
                         по сервисному обслуживанию гарантийному и после гарантийный
                         Стиральных машин
@@ -76,22 +83,22 @@ const InfoPage = () => {
                         Предоставляем услуги
                         по сервисному обслуживанию, ремонту или покупке бытовой техники:
                         <ul>
-                            <li onMouseEnter={() => setMainImg('stiralka.png')}>Стиральных машин</li>
-                            <li onMouseEnter={() => setMainImg('holodos.png')}>Холодильников</li>
-                            <li onMouseEnter={() => setMainImg('CoffeeM.png')}>Кофемашин</li>
-                            <li onMouseEnter={() => setMainImg('Posyda.png')}>Посудомоечные машины</li>
-                            <li onMouseEnter={() => setMainImg('Plita.png')}>Варочные панели</li>
+                            <li onMouseEnter={() => setMainImg(i1)}>Стиральных машин</li>
+                            <li onMouseEnter={() => setMainImg(i2)}>Холодильников</li>
+                            <li onMouseEnter={() => setMainImg(i3)}>Кофемашин</li>
+                            <li onMouseEnter={() => setMainImg(i4)}>Посудомоечные машины</li>
+                            <li onMouseEnter={() => setMainImg(i5)}>Варочные панели</li>
                             И продаже
-                            <li onMouseEnter={() => setMainImg('holodos.png')}>Холодильников</li>
-                            <li onMouseEnter={() => setMainImg('stiralka.png')}>Стиральных машин</li>
-                            <li onMouseEnter={() => setMainImg('Plita.png')}>Варочных панелей</li>
-                            <li onMouseEnter={() => setMainImg('duh.png.webp')}>Духовые шкафы</li>
+                            <li onMouseEnter={() => setMainImg(i2)}>Холодильников</li>
+                            <li onMouseEnter={() => setMainImg(i1)}>Стиральных машин</li>
+                            <li onMouseEnter={() => setMainImg(i5)}>Варочных панелей</li>
+                            <li onMouseEnter={() => setMainImg(i6)}>Духовые шкафы</li>
                         </ul>
                     </div>
                 </div>
 
                 <div className="main-info-img wow animate__animated animate__fadeInRight">
-                    <img src={'https://master43.ru/image/mainSlider/'+ mainImg}/>
+                    <img src={mainImg}/>
                 </div>
             </div>
 

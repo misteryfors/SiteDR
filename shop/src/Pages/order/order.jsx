@@ -7,6 +7,7 @@ import '../../components/css/imgList.css'
 import {getOrder, redactOrder} from "../../actions/order";
 import {getChats} from "../../actions/message";
 import CloseImg from "../../components/image/close_icon.png"
+import {baseUrl} from "../../globalSetings";
 
 const Order = () => {
     let { id } = useParams();
@@ -85,7 +86,7 @@ const Order = () => {
                                     <form onSubmit={handleSubmit} onDragEnter={dragEnterHandler} onDragLeave={dragLeaveHandler}
                                           onDragOver={dragEnterHandler}>
                                         <div className="mainImg">
-                                            <img src={"https://master43.ru:8443/orders/" + user + "/" + mainImg}/>
+                                            <img src={baseUrl+":8443/orders/" + user + "/" + mainImg}/>
                                         </div>
                                     </form> :
                                     <div className="mainImg">
@@ -101,7 +102,7 @@ const Order = () => {
                                                 <img className="deleteImg_img" onClick={()=>delImg(el)} src={CloseImg} alt=''></img>
                                             </div>
                                             <img className="addImg" onMouseEnter={() => setMainImg(el)}
-                                                 src={"https://master43.ru:8443/orders/" + user + "/" + el}/>
+                                                 src={baseUrl+":8443/orders/" + user + "/" + el}/>
 
                                         </div>
                                     ))}
@@ -124,8 +125,8 @@ const Order = () => {
                         <div className="rightBlock">
 
                             <div className="info-rb">
-                                <div className="name form-inpt">
-                                    <label>как к вам обращаться (ФИО)</label>
+                                <div className="name2 form-inpt">
+                                    <label>Как к вам обращаться (ФИО)</label>
                                     <input
                                         type="text"
                                         className="input"
@@ -134,8 +135,8 @@ const Order = () => {
                                         required
                                     />
                                 </div>
-                                <div className="name form-inpt">
-                                    <label>адресс</label>
+                                <div className="name2 form-inpt">
+                                    <label>Адресс</label>
                                     <input
                                         type="text"
                                         className="input"
@@ -144,8 +145,8 @@ const Order = () => {
                                         required
                                     />
                                 </div>
-                                <div className="name form-inpt">
-                                    <label>телефон</label>
+                                <div className="name2 form-inpt">
+                                    <label>Телефон</label>
                                     <input
                                         type="text"
                                         className="input"

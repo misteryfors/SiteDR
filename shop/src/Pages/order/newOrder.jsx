@@ -8,6 +8,7 @@ import {createOrder, getOrder, redactOrder} from "../../actions/order";
 import {getChats} from "../../actions/message";
 import {Helmet} from "react-helmet";
 import CloseImg from "../../components/image/close_icon.png"
+import {baseUrl} from "../../globalSetings";
 
 const NewOrder = () => {
     let { id } = useParams();
@@ -77,7 +78,7 @@ const NewOrder = () => {
         <div>
             <Helmet>
                 <title>Заказать ремонт</title>
-                <link rel="canonical" href="https://master43.ru/newOrder" />
+                <link rel="canonical" href={baseUrl+"/newOrder"} />
                 <meta name="description" content="Форма регистрации заказа" />
             </Helmet>
             {loads==true ?
@@ -91,10 +92,10 @@ const NewOrder = () => {
                                               onDragOver={dragEnterHandler}>
                                             {imgs.length==0 ?
                                             <div className="mainImg">
-                                                <img src={'https://master43.ru/image/plug.png'}/>
+                                                <img src={baseUrl+'/image/plug.png'}/>
                                             </div>:
                                             <div className="mainImg">
-                                                <img src={"https://master43.ru:8443/orders/" + user + "/" + mainImg}/>
+                                                <img src={baseUrl+":8443/orders/" + user + "/" + mainImg}/>
                                             </div>}
                                         </form> :
                                         <div className="mainImg">
@@ -110,7 +111,7 @@ const NewOrder = () => {
                                                 <img className="deleteImg_img" onClick={()=>delImg(el)} src={CloseImg} alt=''></img>
                                                 </div>
                                                 <img className="addImg" onMouseEnter={() => setMainImg(el)}
-                                                     src={"https://master43.ru:8443/orders/" + user + "/" + el}/>
+                                                     src={baseUrl+":8443/orders/" + user + "/" + el}/>
 
                                             </div>
                                         ))}
@@ -131,7 +132,7 @@ const NewOrder = () => {
                         <div className="rightBlock">
 
                             <div className="info-rb">
-                                <div className="name form-inpt">
+                                <div className="name2 form-inpt">
                                     <label>Как к вам обращаться (ФИО)</label>
                                     <input
                                         type="text"
@@ -142,7 +143,7 @@ const NewOrder = () => {
                                         required
                                     />
                                 </div>
-                                <div className="name form-inpt">
+                                <div className="name2 form-inpt">
                                     <label>Адресс</label>
                                     <input
                                         type="text"
@@ -153,7 +154,7 @@ const NewOrder = () => {
                                         required
                                     />
                                 </div>
-                                <div className="name form-inpt">
+                                <div className="name2 form-inpt">
                                     <label>Телефон</label>
                                     <input
                                         type="tel"
@@ -222,7 +223,7 @@ const NewOrder = () => {
                                 <div className="Save-btn">
 
                                         <button className={"btnSave"}
-                                                onClick={() => dispatch(createOrder(user?role!='admin'?chat[0]._id:'undefined':'undefined', user, adress, fio, phone, type, mark, timeInUse, comment, urgency, time, imgs, role))}>Сохранить
+                                                onClick={() => dispatch(createOrder(user?role!='admin'?chat[0]._id:'undefined':'undefined', user, adress, fio, phone, type, mark, timeInUse, comment, urgency, time, imgs, role))}>Отправить
                                         </button>
                                 </div>
                             </div>

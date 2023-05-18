@@ -6,6 +6,7 @@ import {uploadFile} from "../../../../actions/product";
 import "../../../../components/css/NewProd.css";
 import '../../../../components/css/imgList.css'
 import CloseImg from "../../../../components/image/close_icon.png"
+import {baseUrl} from "../../../../globalSetings";
 
 const NewProduct = () => {
     const [mainImg, setMainImg] = useState("")
@@ -23,6 +24,8 @@ const NewProduct = () => {
     const [fullDescription, setFullDescription] = useState("")
     const [dragEnter, setDragEnter] = useState(false)
     const [privateComment, setPrivateComment] = useState("")
+    const [background, setBackground] = useState("")
+
 
     function fileUploadHandler(event) {
         const files = [...event.target.files]
@@ -80,6 +83,7 @@ const NewProduct = () => {
         setMark(product.mark)
         setType(product.type)
         setPrivateComment(product.privateComment)
+        setBackground(product.background)
         }
     }, [product])
     return (
@@ -99,7 +103,7 @@ const NewProduct = () => {
                                             <img src={'https://master43.ru/image/plug.png'}/>
                                         </div>:
                                     <div className="mainImg">
-                                        <img src={"https://master43.ru:8443/products/" + id + "/" + mainImg}/>
+                                        <img src={baseUrl+"/products/" + id + "/" + mainImg}/>
                                     </div>}
                                 </form> :
                                 <div className="mainImg">
@@ -115,7 +119,7 @@ const NewProduct = () => {
                                         <img className="deleteImg_img" onClick={()=>delImg(el)} src={CloseImg} alt=''></img>
                                         </div>
                                         <img className="addImg" onMouseEnter={() => setMainImg(el)}
-                                            src={"https://master43.ru:8443/products/" + id + "/" + el}/>
+                                            src={baseUrl+"/products/" + id + "/" + el}/>
 
                                     </div>
                                 ))}
@@ -207,10 +211,19 @@ const NewProduct = () => {
                                 required
                             />
                         </div>
+                        <div className="fullDescription">
+                            <label htmlFor="selectBackground">Выберите фон:</label>
+                            <select id="selectBackground" value={background} onChange={(e) => setBackground(e.target.value)}>
+                                <option value="water">water</option>
+                                <option value="ice">ice</option>
+                                <option value="fire">fire</option>
+                                <option value="none">none</option>
+                            </select>
+                        </div>
                         
                         <div className="Save-btn">
                             <button className={"btnSave"}
-                                    onClick={() => {redactProduct(id, name, type, mark, imgs, price, shortDescription, fullDescription, true,privateComment)}}>Сохранить
+                                    onClick={() => {redactProduct(id, name, type, mark, imgs, price, shortDescription, fullDescription, true,privateComment,background)}}>Сохранить
                             </button>
                         </div>
                     </div>

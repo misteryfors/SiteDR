@@ -17,7 +17,7 @@ const Modal = ({active,setActive,name,setName,setProducts,products})=>{
                 onChange={(e) => setName(e.target.value)}
                 required
             />
-                <div className='adddbtn' onClick={() => createProduct(name,'','',[],0,'','',false,setProducts,products)}><button className={"MainButton"} >Добавить</button></div>
+                <div className='adddbtn' onClick={() => createProduct(name,'','',[],0,'','',false,false,"none",setProducts,products)}><button className={"MainButton"} >Добавить</button></div>
             </div>
         </div>
     )

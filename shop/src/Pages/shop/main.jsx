@@ -12,6 +12,7 @@ import Filters from "./filters/filters";
 import {NavLink, useParams, useLocation} from "react-router-dom";
 import {Helmet} from "react-helmet";
 import { initWow } from '../../wow/wow';
+import {baseUrl} from "../../globalSetings";
 
 const MainPage = () => {
     const dispatch = useDispatch()
@@ -87,7 +88,7 @@ const MainPage = () => {
         <div className='Items-inside-cont'>
             <Helmet>
                 <title>Товары и услуги</title>
-                <link rel="canonical" href="https://master43.ru" />
+                <link rel="canonical" href={baseUrl} />
                 <meta name="description" content="На нашем сайте мы предоставляем услуги
                     по сервисному обслуживанию гарантийному и после гарантийный" />
             </Helmet>

@@ -9,6 +9,7 @@ import ImageText2 from "../../components/image/people.jpg"
 import ImageText3 from "../../components/image/руки.jpg"
 import Imagelogo from "../../components/image/logosss.jpg"
 import Imagelogo2 from "../../components/image/шестерня.png"
+import {baseUrl} from "../../globalSetings";
 
 const MoreInfoPage = () => {
     useEffect(() => {
@@ -19,7 +20,7 @@ const MoreInfoPage = () => {
         <div className="About-us_block">
             <Helmet>
                 <title>О нас</title>
-                <link rel="canonical" href="https://master43.ru/info" />
+                <link rel="canonical" href={baseUrl+"/info"} />
                 <meta name="description" content="Мы предлагаем профессиональные услуги по ремонту бытовой техники, включая холодильники, стиральные машины и многое другое. Мы имеем богатый опыт в ремонте холодильников разных марок, таких как Бирюса, Бош, Атлант, Индезит, LG, Pozis, Стинол, Веко и других. Наши квалифицированные специалисты могут решить любую проблему с неисправным холодильником, включая замену компрессора и двигателя.
 
                     Мы предлагаем конкурентоспособные цены на ремонт холодильников, включая замену компрессора и двигателя, и стоимость услуг зависит от модели холодильника и сложности работ. Кроме того, мы предоставляем гарантию на все виды услуг, что подтверждает нашу ответственность и профессионализм. Вы можете узнать стоимость ремонта холодильника, связавшись с нами по телефону или на сайте.
