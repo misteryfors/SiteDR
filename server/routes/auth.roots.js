@@ -42,7 +42,7 @@ router.post('/registration',
             }
         }
         const hashPassword =await bcrypt.hash(password, 15)
-        const newUser = new User({email,password: hashPassword,role:"client",name:email,notice:'Вы успешно зарегистрированны',confirmed:false})
+        const newUser = new User({email,password: hashPassword,role:"client",name:email,notice:'Вы успешно зарегистрированны',confirmed:true})
         await newUser.save()
         const token = jwt.sign({id: newUser.id}, config.get("secretKey"), {expiresIn: "2h"})
         const mailOptions = {
