@@ -16,7 +16,7 @@ const transporter = nodemailer.createTransport({
     secure: true,// Здесь можно указать другой почтовый сервис
     auth: {
         user: "master43dotru@mail.ru", // Замените на свою почту
-        pass: "BsAQrtjmYkhTs9GGPxs7" // Замените на свой пароль
+        pass: "9Nnt6ABqvUrLzncnQMS5" // Замените на свой пароль
     }
 });
 
