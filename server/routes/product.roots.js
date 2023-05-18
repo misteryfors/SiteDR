@@ -1,7 +1,7 @@
 const Router = require('express')
-const Product = require('../models/Product')
+const Product = require('../models/product.js')
 const {check,validationResult} =require('express-validator')
-const User = require("../models/User")
+const User = require("../models/user")
 const fileService = require('../services/fileService')
 const fileController = require('../controllers/fileController')
 const authMiddleware = require('../middleware/auth.middleware')
@@ -25,8 +25,8 @@ router.post('/createProduct',
                 return res.status(400).json({message:'Uncorrect request', errors})
             }
             //console.log(req.body)
-            const {name, type, mark, price, shortDescription, description, images, privateComment} =req.body
-            const product = new Product({name, type, mark, price, shortDescription, description, images, privateComment})
+            const {name, type, mark, price, shortDescription, description, images, privateComment,booked,background} =req.body
+            const product = new Product({name, type, mark, price, shortDescription, description, images, privateComment,booked,background})
             await product.save()
             await fileService.createDir(req.filepath+'\\products\\'+product.id)
 
@@ -51,9 +51,41 @@ router.post('/redactProduct',
             }
             console.log(req.body.imgs)
             console.log(req.body)
-            const newProd = await Product.updateOne({_id: req.body.UID},{$set:{name:req.body.name, type:req.body.type, mark:req.body.mark, price:req.body.price, shortDescription:req.body.shortDescription, description:req.body.description, imgs:req.body.imgs, privateComment:req.body.privateComment}})
+            const newProd = await Product.updateOne({_id: req.body.UID},{$set:{name:req.body.name, type:req.body.type, mark:req.body.mark, price:req.body.price, shortDescription:req.body.shortDescription, description:req.body.description, imgs:req.body.imgs, privateComment:req.body.privateComment,background:req.body.background}})
             console.log(newProd)
             return res.json({message:"Product was redacted"})
+        }catch (e){
+            console.log(e)
+        }
+    })
+router.post('/bookedProduct',
+    [
+        //check('name','Uncorrect name').isLength({min:3,max:100}),
+        //check('type','Uncorrect type').isLength({min:3,max:100}),
+        //check('mark','Uncorrect mark').isLength({min:3,max:100}),
+        //check('price','Uncorrect price').isFloat,
+    ],
+    async (req,res)=>{
+        try {
+            const errors = validationResult(req)
+            if (!errors.isEmpty()) {
+                return res.status(400).json({message:'Uncorrect request', errors})
+            }
+            console.log(req.body.imgs)
+            console.log(req.body)
+            const Prod = await Product.findOne({_id: req.body.UID})
+            console.log(Prod)
+            if (Prod.booked==true)
+            {
+                await Product.updateOne({_id: req.body.UID},{$set:{booked:false}})
+                return res.json({message:"Продукт разбронирован"})
+            }
+            else
+            {
+                await Product.updateOne({_id: req.body.UID},{$set:{booked:true}})
+                return res.json({message:"Продукт забронирован"})
+            }
+
         }catch (e){
             console.log(e)
         }

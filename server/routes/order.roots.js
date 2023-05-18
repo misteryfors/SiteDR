@@ -1,15 +1,15 @@
 const Router = require('express')
-const Product = require('../models/Product')
+const Product = require('../models/product.js')
 const Order = require('../models/order')
 const {check,validationResult} =require('express-validator')
-const User = require("../models/User")
+const User = require("../models/user")
 const fileService = require('../services/fileService')
 const fileController = require('../controllers/fileController')
 const authMiddleware = require("../middleware/auth.middleware");
 const jwt = require("jsonwebtoken");
 const config = require("config");
 const router = new Router()
-
+const bot = require("../index")
 router.post('/upload', fileController.uploadFile)
 router.post('/createOrder',
     [
@@ -28,6 +28,7 @@ router.post('/createOrder',
             console.log(order)
             await order.save()
             await User.updateOne({_id: '641336ac79efeb6dad283d86'},{notice:'Новый заказ'})
+            bot.sendMessage(1759163276, 'Новый заказ! \nАдресс: '+adress+'\nФио: '+ fio+'\nТелефон: '+ phone+'\nТип: '+ type+'\nМарка: '+ mark+'\nВремя в использовании: '+ timeInUse+'\nКомментарий: '+ comment+'\nСрочная: '+ urgency +'\nЖелательное время: '+ time);
             return res.json({order})
         }catch (e){
             console.log(e)

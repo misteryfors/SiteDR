@@ -1,5 +1,5 @@
 const Router = require('express')
-const User = require('../models/User')
+const User = require('../models/user')
 const bcrypt = require('bcryptjs')
 const config = require("config")
 const jwt = require("jsonwebtoken")
@@ -8,7 +8,17 @@ const router = new Router()
 const authMiddleware = require('../middleware/auth.middleware')
 const Chat = require("../models/chat");
 const fileService = require("../services/fileService");
+const nodemailer = require('nodemailer');
 
+const transporter = nodemailer.createTransport({
+    host: 'smtp.mail.ru',
+    port: 465,
+    secure: true,// Здесь можно указать другой почтовый сервис
+    auth: {
+        user: "master43dotru@mail.ru", // Замените на свою почту
+        pass: "BsAQrtjmYkhTs9GGPxs7" // Замените на свой пароль
+    }
+});
 
 router.post('/registration',
     [
@@ -26,34 +36,85 @@ router.post('/registration',
         const {email, password} =req.body
         console.log(email,password)
         const candidate = await User.findOne({email})
-
         if(candidate) {
-            return res.status(400).json({message: 'User with email '+email+' already exist'})
+            if(candidate.confirmed==true) {
+                return res.status(400).json({message: 'User with email '+email+' already exist'})
+            }
         }
         const hashPassword =await bcrypt.hash(password, 15)
-        const newUser = new User({email,password: hashPassword,role:"client",name:email,notice:'Вы успешно зарегистрированны'})
+        const newUser = new User({email,password: hashPassword,role:"client",name:email,notice:'Вы успешно зарегистрированны',confirmed:false})
         await newUser.save()
-        const token = jwt.sign({id: newUser.id}, config.get("secretKey"), {expiresIn: "1h"})
-        const fUser = await User.findOne({_id:newUser.id})
-        const sUser = await User.findOne({_id:'641336ac79efeb6dad283d86'})
-        const chat = new Chat({firstUser:newUser.id,secondUser:'641336ac79efeb6dad283d86',firstUserName:fUser.name,secondUserName:sUser.name,messages:[],notice:'Поздравляем вы зарегестрированны'})
-        await chat.save()
-        await fileService.createDir(req.filepath+'/orders/'+newUser.id)
-        console.log(newUser)
-        console.log(token)
-        return res.json({
-            token,
-            user: {
-                id: newUser.id,
-                email: newUser.email,
-                role: newUser.role,
-                avatar: newUser.avatar
+        const token = jwt.sign({id: newUser.id}, config.get("secretKey"), {expiresIn: "2h"})
+        const mailOptions = {
+            from: 'master43dotru@mail.ru',
+            to: email,
+            subject: 'Подтверждение регистрации',
+            html: 'Пожалуйста, подтвердите ваш аккаунт. <a href="http://localhost:433/confirm/' + token + '">Ссылка для подтверждения</a>'
+        };
+
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Письмо успешно отправлено: ' + info.response);
             }
-        })
+        });
     }catch (e){
         console.log(e)
     }
 })
+router.post('/confirm',
+    async (req,res)=>{
+        try {
+            console.log(req.body)
+            console.log('1')
+            const {id} =req.body
+            console.log(id)
+            console.log(config.get('secretKey'))
+            console.log('2')
+            let id1=jwt.verify(id, config.get('secretKey'))
+            console.log(id1)
+            console.log('3')
+            const candidate = await User.findOneAndUpdate({_id:id1.id},{$set:{confirmed:true}})
+            if(candidate) {
+                if(candidate.confirmed==true) {
+                    return res.json({
+                        token:id,
+                        user: {
+                            id: candidate.id,
+                            email: candidate.email,
+                            role: candidate.role,
+                            avatar: candidate.avatar
+                        }
+                    })
+                }
+                if(candidate.confirmed==false) {
+                    //const fUser = await User.findOneAndUpdate({_id:candidate.id},{$set:{confirmed:true}})
+                    const sUser = await User.findOne({_id:'641336ac79efeb6dad283d86'})
+                    const chat = new Chat({firstUser:candidate.id,secondUser:'641336ac79efeb6dad283d86',firstUserName:candidate.name,secondUserName:sUser.name,messages:[],notice:'Поздравляем вы зарегестрированны'})
+                    await chat.save()
+                    await fileService.createDir(req.filepath+'/orders/'+candidate.id)
+                    console.log(candidate)
+                    console.log(id)
+                    return res.json({
+                        token:id,
+                        user: {
+                            id: candidate.id,
+                            email: candidate.email,
+                            role: candidate.role,
+                            avatar: candidate.avatar
+                        }
+                    })
+                }
+            }
+
+
+
+        }catch (e){
+            console.log(e)
+            return res.status(400).json({message: "Срок действия ссылки истёк"})
+        }
+    })
 
 router.post('/login',
     async (req,res)=>{
@@ -70,6 +131,10 @@ router.post('/login',
             if (!isPassValid) {
                 console.log("Не верный пароль")
                 return res.status(400).json({message: "Не верный пароль"})
+            }
+            if (user.confirmed==false) {
+                console.log("Не подтверждённая почта")
+                return res.status(400).json({message: "Почта не подтвреждена"})
             }
             const token = jwt.sign({id: user.id}, config.get("secretKey"), {expiresIn: "1h"})
             console.log(token, user.id, user.email, user.role, user.avatar)

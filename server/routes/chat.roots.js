@@ -1,17 +1,16 @@
 const Router = require('express')
 const Chat = require('../models/chat')
 const Message = require('../models/message')
-const User = require('../models/User')
+const User = require('../models/user')
 const bcrypt = require('bcryptjs')
 const config = require("config")
 const jwt = require("jsonwebtoken")
 const {check,validationResult} =require('express-validator')
 const router = new Router()
 const authMiddleware = require('../middleware/auth.middleware')
-const Product = require("../models/Product");
+const Product = require("../models/product.js");
 const {ObjectId} = require("mongoose");
-
-
+const bot = require("../index")
 router.post('/createChat',
     async (req,res)=>{
         try {
@@ -59,6 +58,8 @@ router.post('/sendMessage',
             await message1.save()
             if (chat1.firstUser==req.body.user)
             {
+                if(!req.body.order)
+                bot.sendMessage(1759163276, 'Вам сообщение! ');
                 await User.updateOne({_id: chat1.secondUser},{notice:'Вам сообщение'})
                 await Chat.updateOne({_id:chat1._id},{chekSecondUser:false})
             }
