@@ -19,6 +19,7 @@ import {Order} from "./Pages/order/order";
 import {Slider} from "./Pages/slider";
 import CPOrders from "./Pages/UserPage/admin/Orders/CPOrders";
 import {Helmet} from "react-helmet";
+import {ConfirmPage, confirmPage} from "./Pages/auntification/confirm";
 import {MoreInfoPage} from "./Pages/moreInfo/moreInfo";
 
 export default function Routs(){
@@ -37,6 +38,7 @@ export default function Routs(){
                 <Route index element={<InfoPage/>}/>
                 <Route path="info" element={<MoreInfoPage/>}/>
                 <Route path="shop" element={<MainPage/>}/>
+                <Route path="confirm/:id" element={<ConfirmPage/>}/>
                 <Route path="shop" element={<MainPage/>}>
                     <Route index element={<MainPage/>}/>
                     <Route path="*" element={<MainPage/>}/>

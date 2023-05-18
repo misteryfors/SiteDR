@@ -1,18 +1,18 @@
 import axios from 'axios'
 import {setUser} from "../reducers/userReducer";
 import notificationSound from '../components/original-hangouts-sms-tone.mp3';
+import {baseServerUrl} from "../globalSetings";
 const audio = new Audio(notificationSound);
+
 
 export const registration = (email, password) => {
     return async dispatch => {
         console.log(email, password)
         try {
-            const response = await axios.post(`https://master43.ru:8443/api/auth/registration`, {
+            const response = await axios.post(baseServerUrl+`/api/auth/registration`, {
                 email,
                 password
             })
-            dispatch(setUser(response.data.user))
-            localStorage.setItem('token', response.data.token)
             console.log(response.data)
             console.log(response.data.user)
         } catch (e) {
@@ -24,7 +24,7 @@ export const registration = (email, password) => {
 export const login =  (email, password) => {
     return async dispatch => {
         try {
-            const response = await axios.post(`https://master43.ru:8443/api/auth/login`, {
+            const response = await axios.post(baseServerUrl+`/api/auth/login`, {
                 email,
                 password
             })
@@ -37,9 +37,29 @@ export const login =  (email, password) => {
         }
     }
 }
+export const confirm =  (id) => {
+    return async dispatch => {
+        try {
+            const response = await axios.post(baseServerUrl+`/api/auth/confirm`, {
+                id
+            })
+            if (response.data) {
+                console.log(response.data)
+                dispatch(setUser(response.data.user))
+
+                localStorage.setItem('token', response.data.token)
+                window.location.href = "/User";
+            }
+
+
+            } catch (e) {
+            alert(e)
+        }
+    }
+}
 export async function getNotice (setIsNotice) {
     try {
-        const response = await axios.get(`https://master43.ru:8443/api/auth/getNotice`,
+        const response = await axios.get(baseServerUrl+`/api/auth/getNotice`,
             {headers:{Authorization:`Bearer ${localStorage.getItem('token')}`}}
         )
         if (response.data.notice!='' & response.data.notice!=null & response.data.notice!=undefined & response.data.notice!=0)
@@ -61,7 +81,7 @@ export async function getNotice (setIsNotice) {
 export const auth =  () => {
     return async dispatch => {
         try {
-            const response = await axios.get(`https://master43.ru:8443/api/auth/auth`,
+            const response = await axios.get(baseServerUrl+`/api/auth/auth`,
                 {headers:{Authorization:`Bearer ${localStorage.getItem('token')}`}}
             )
             dispatch(setUser(response.data.user))
@@ -76,7 +96,7 @@ export const auth =  () => {
 export const ChangAccountInformation =  (email, password,phone,name) => {
     return async dispatch => {
         try {
-            const response = await axios.post(`https://master43.ru:8443/api/auth/changeacc`, {
+            const response = await axios.post(baseServerUrl+`/api/auth/changeacc`, {
                 Firsttoken:`${localStorage.getItem('token')}`,
                 email,
                 password,

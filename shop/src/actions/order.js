@@ -1,6 +1,6 @@
 import axios from 'axios'
 import {sendMessage} from "./message";
-
+import {baseServerUrl} from "../globalSetings";
 
 
 export const createOrder = (chat,user,adress, fio, phone, type, mark, timeInUse, comment, urgency, time, imgs, role) => {
@@ -9,7 +9,7 @@ export const createOrder = (chat,user,adress, fio, phone, type, mark, timeInUse,
         try {
 
             console.log(user, chat)
-            const response = await axios.post(`https://master43.ru:8443/api/order/createOrder`, {
+            const response = await axios.post(baseServerUrl+`/api/order/createOrder`, {
                 adress,
                 fio,
                 phone,
@@ -23,11 +23,17 @@ export const createOrder = (chat,user,adress, fio, phone, type, mark, timeInUse,
                 user
             })
             alert('Заказа на ремонт успешно отправлен ' +'его id '+response.data.order._id)
-            window.location.href = "/";
+
             console.log('no error')
+            console.log(user)
             if (role != 'admin' & user !== 'undefined' & user !== null) {
+                window.location.href = "/User/chats";
                 dispatch(sendMessage(chat, "", response.data.order._id, user))
                 console.log(response.data.order._id)
+            }
+            else
+            {
+                window.location.href = "/";
             }
         } catch (e) {
             console.log('error')
@@ -42,7 +48,7 @@ export const createOrder = (chat,user,adress, fio, phone, type, mark, timeInUse,
 export const getOrder = (orderId,setMainImg, setAdress, setFio, setPhone, setType, setMark, setTimeInUse, setComment, setTime, setImgs, setUrgency, setUser) => {
     return async dispatch => {
         try {
-            const response = await axios.get(`https://master43.ru:8443/api/order/getOrder?orderId=${orderId}`, {
+            const response = await axios.get(baseServerUrl+`/api/order/getOrder?orderId=${orderId}`, {
 
             })
             console.log(response.data)
@@ -68,7 +74,7 @@ export const getOrder = (orderId,setMainImg, setAdress, setFio, setPhone, setTyp
 }
 export async function deleteOrder (UID,setOrders,orders) {
         try {
-            const response = await axios.get(`https://master43.ru:8443/api/order/deleteOrder?UID=${UID}`, {
+            const response = await axios.get(baseServerUrl+`/api/order/deleteOrder?UID=${UID}`, {
                 headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
             if (response.data.order)
                 setOrders(orders.filter(order => order._id != response.data.order._id))
@@ -81,7 +87,7 @@ export async function deleteOrder (UID,setOrders,orders) {
 export const redactOrder = async (id,adress, fio, phone, type, mark, timeInUse, comment, urgency, time, imgs) => {
     try {
         console.log('nn eror')
-        const response = await axios.post(`https://master43.ru:8443/api/order/redactOrder`, {
+        const response = await axios.post(baseServerUrl+`/api/order/redactOrder`, {
             id,
             adress,
             fio,
@@ -110,7 +116,7 @@ export function uploadFile(file, UID) {
             formData.append('file', file)
             formData.append('UID', UID)
 
-            const response = await axios.post(`https://master43.ru:8443/api/prod/upload`, formData, {
+            const response = await axios.post(baseServerUrl+`/api/prod/upload`, formData, {
                 headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
             });
             //dispatch(addFile(response.data))
@@ -121,7 +127,7 @@ export function uploadFile(file, UID) {
 }
 export async function getOrders(currentPage,setCurrenPage,setFetching,products,setProducts,setCountPage,pageCount,revers) {
     try {
-        let url=`https://master43.ru:8443/api/order/getOrders?currentPage=${currentPage+1}&revers=${revers}`
+        let url=baseServerUrl+`/api/order/getOrders?currentPage=${currentPage+1}&revers=${revers}`
 
         const response = await axios.get(url).finally(()=>setFetching(false))
         console.log(response.data)

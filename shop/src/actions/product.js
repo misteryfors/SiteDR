@@ -1,10 +1,10 @@
 import axios from 'axios'
+import {baseServerUrl} from "../globalSetings";
 
 
-
-export async function createProduct (name, type, mark, imgs, price, shortDescription, description, publicate,setProducts,products) {
+export async function createProduct (name, type, mark, imgs, price, shortDescription, description, publicate,booked,background,setProducts,products) {
         try {
-            const response = await axios.post(`https://master43.ru:8443/api/prod/createProduct`, {
+            const response = await axios.post(baseServerUrl+`/api/prod/createProduct`, {
                 name,
                 type,
                 mark,
@@ -12,7 +12,9 @@ export async function createProduct (name, type, mark, imgs, price, shortDescrip
                 price,
                 shortDescription,
                 description,
-                publicate
+                publicate,
+                booked,
+                background
             })
             if (response.data.product)
             {
@@ -28,7 +30,7 @@ export async function createProduct (name, type, mark, imgs, price, shortDescrip
 export async function getProduct (UID,setProduct,setFetching) {
         try {
             let user=localStorage.getItem('token')
-            const response = await axios.get(`https://master43.ru:8443/api/prod/getProduct?id=${UID}&user=${user}`)
+            const response = await axios.get(baseServerUrl+`/api/prod/getProduct?id=${UID}&user=${user}`)
             if (response.status === 200) {
                 setProduct(response.data.product)
                 setFetching(false)
@@ -43,7 +45,7 @@ export async function deleteProduct (UID,setProducts,products) {
         try {
             console.log('-------------------------------------')
             console.log(UID)
-            const response = await axios.get(`https://master43.ru:8443/api/prod/deleteProduct?UID=${UID}`, {
+            const response = await axios.get(baseServerUrl+`/api/prod/deleteProduct?UID=${UID}`, {
                 headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}})
             console.log(response.data.product._id)
             if (response.data.product)
@@ -53,7 +55,7 @@ export async function deleteProduct (UID,setProducts,products) {
             alert(e.response.data.message)
         }
 }
-export async function redactProduct (UID, name, type, mark, imgs, price, shortDescription, description, publicate,privateComment) {
+export async function redactProduct (UID, name, type, mark, imgs, price, shortDescription, description, publicate,privateComment,background) {
     try {
         console.log(UID)
         console.log(name)
@@ -64,7 +66,7 @@ export async function redactProduct (UID, name, type, mark, imgs, price, shortDe
         console.log(shortDescription)
         console.log(description)
         console.log(publicate)
-        const response = await axios.post(`https://master43.ru:8443/api/prod/redactProduct`, {
+        const response = await axios.post(baseServerUrl+`/api/prod/redactProduct`, {
             UID,
             name,
             type,
@@ -74,7 +76,20 @@ export async function redactProduct (UID, name, type, mark, imgs, price, shortDe
             shortDescription,
             description,
             publicate,
-            privateComment
+            privateComment,
+            background
+        })
+        alert(response.data.message)
+    } catch (e) {
+        alert(e.response.data.message)
+    }
+}
+export async function bookedProduct (UID) {
+    try {
+        console.log(UID)
+
+        const response = await axios.post(baseServerUrl+`/api/prod/bookedProduct`, {
+            UID
         })
         alert(response.data.message)
     } catch (e) {
@@ -89,7 +104,7 @@ export async function uploadFile (file, UID,DIR,setImgs,imgs) {
             formData.append('file', file)
             formData.append('UID', UID)
             formData.append('DIR', DIR)
-            const response = await axios.post(`https://master43.ru:8443/api/prod/upload`, formData, {
+            const response = await axios.post(baseServerUrl+`/api/prod/upload`, formData, {
                 headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
             });
             console.log(response.data.fname)
@@ -103,7 +118,7 @@ export async function uploadFile (file, UID,DIR,setImgs,imgs) {
 export async function getProducts(currentPage,setCurrenPage,setFetching,products,setProducts,setCountPage,pageCount,revers, filters) {
         try {
             let user=localStorage.getItem('token')
-            let url=`https://master43.ru:8443/api/prod/getProducts?currentPage=${currentPage+1}&all=${filters.all}&name=${filters.name}&type=${filters.type}&mark=${filters.mark}&minPrice=${filters.minPrice}&maxPrice=${filters.maxPrice}&revers=${revers}&user=${user}`
+            let url=baseServerUrl+`/api/prod/getProducts?currentPage=${currentPage+1}&all=${filters.all}&name=${filters.name}&type=${filters.type}&mark=${filters.mark}&minPrice=${filters.minPrice}&maxPrice=${filters.maxPrice}&revers=${revers}&user=${user}`
 
             const response = await axios.get(url).finally(()=>setFetching(false))
             console.log(response.data)
