@@ -37,10 +37,10 @@ app.use("/api/order",orderRouter)
 app.use("/api/chat",chatRouter)
 app.use("/api/revw",reviewRouter)
 
-const host = '127.0.0.1';
+const host = 'master43.ru';
 const port = 8443;
 
-http
+https
     .createServer(
         {
             key: fs.readFileSync('../cert/your_domain.key.txt'),
