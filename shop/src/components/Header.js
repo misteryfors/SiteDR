@@ -69,7 +69,7 @@ export default function Header(){
                 <img className="Logo-nav-mob" style={{height:'70px'}} src={baseUrl+'/image/DaRmini.svg'}/>
                 </NavLink>
                 <NavLink style={{height:'70px'}} to="/User">
-                <img className="Auth-nav-mob" style={{height:'70px',width:'70px'}} src={baseUrl+'/image/Profile.png'}/>
+                <img className="Auth-nav-mob" style={{height:'70px',width:'70px'}} src={require('./image/Profile.PNG')}/>
                 </NavLink>
                 </div>
             {isMenuOpen && (
