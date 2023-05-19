@@ -9,7 +9,7 @@ const authMiddleware = require("../middleware/auth.middleware");
 const jwt = require("jsonwebtoken");
 const config = require("config");
 const router = new Router()
-const bot = require("../index")
+const {bot} = require("../index")
 router.post('/upload', fileController.uploadFile)
 router.post('/createOrder',
     [

@@ -10,7 +10,7 @@ const router = new Router()
 const authMiddleware = require('../middleware/auth.middleware')
 const Product = require("../models/product.js");
 const {ObjectId} = require("mongoose");
-const bot = require("../index")
+const {bot} = require("../index")
 router.post('/createChat',
     async (req,res)=>{
         try {
