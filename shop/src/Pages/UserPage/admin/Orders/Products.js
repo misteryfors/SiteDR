@@ -6,7 +6,7 @@ import plug from "../../../../components/image/Заглушка.png";
 import {deleteOrder} from "../../../../actions/order";
 import UniversalModal from '../../../../components/universalModal';
 import {useState} from 'react';
-import {baseUrl} from "../../../../globalSetings";
+import {baseServerUrl} from "../../../../globalSetings";
 
 const Products=({product,setProducts,products})=>{
     const [modalActive, setModalActive] = useState("")
@@ -16,7 +16,7 @@ const Products=({product,setProducts,products})=>{
     {img=<img src={plug}/>
         if (product.imgs.length!=0)
         {
-            img=<img src={baseUrl+"/orders/"+user+"/"+product.imgs[0]}/>
+            img=<img src={baseServerUrl+"/products/"+user+"/"+product.imgs[0]}/>
         }else {
 
         }

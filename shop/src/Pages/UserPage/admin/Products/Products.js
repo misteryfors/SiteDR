@@ -6,7 +6,7 @@ import plug from "../../../../components/image/Заглушка.png";
 import {bookedProduct, deleteProduct} from "../../../../actions/product";
 import UniversalModal from '../../../../components/universalModal';
 import {useState} from 'react';
-import {baseUrl} from "../../../../globalSetings";
+import {baseServerUrl, baseUrl} from "../../../../globalSetings";
 import bookedIMG from "../../../../components/image/BackgroundShop/Police-Tape2.png"
 
 const Products=({product,setProducts,products})=>{
@@ -17,7 +17,7 @@ const Products=({product,setProducts,products})=>{
     {img=<img src={plug}/>
     if (product.imgs.length!=0)
     {
-        img=<img src={baseUrl+"/products/"+product._id+"/"+product.imgs[0]}/>
+        img=<img src={baseServerUrl+"/products/"+product._id+"/"+product.imgs[0]}/>
     }else {
 
     }
