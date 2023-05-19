@@ -8,6 +8,7 @@ import '../../../components/css/loading.css'
 import plug from "../../../components/image/Заглушка.png"
 import CloseImg from "../../../components/image/close_icon.png"
 import {Helmet} from "react-helmet";
+import {baseServerUrl} from "../../../globalSetings";
 
 const ProductPage=()=>{
     const [mainImg, setMainImg] = useState("")
@@ -43,13 +44,13 @@ const ProductPage=()=>{
                                     <div className='leftBlock-prod2'>
                                         <div className="imgSlot" style={{display: "flex",flexDirection: "column"}}>
                                             <div className="mainImg">
-                                                <img  src={"https://master43.ru:8443/products/"+id+"/"+(mainImg!="" ? mainImg:product.imgs[0])}/>
+                                                <img  src={baseServerUrl+"/products/"+id+"/"+(mainImg!="" ? mainImg:product.imgs[0])}/>
                                                 {/*<img src="https://avatars.mds.yandex.net/get-mpic/5220722/img_id1852846487040977932.jpeg/orig" alt=''></img>*/}
                                             </div>
                                             <div className={"imgList"}>
                                                 {product.imgs.map(el =>(
                                                     <div className={"additionalImg"}>
-                                                        <img className="addImg" onMouseEnter={()=>setMainImg(el)} src={"https://master43.ru:8443/products/"+id+"/"+el ? "https://master43.ru:8443/products/"+id+"/"+el :plug}/>
+                                                        <img className="addImg" onMouseEnter={()=>setMainImg(el)} src={baseServerUrl+"/products/"+id+"/"+el ? baseServerUrl+"/products/"+id+"/"+el :plug}/>
                                                     </div>
                                                 ))}
                                             </div>

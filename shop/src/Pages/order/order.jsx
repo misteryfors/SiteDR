@@ -7,7 +7,7 @@ import '../../components/css/imgList.css'
 import {getOrder, redactOrder} from "../../actions/order";
 import {getChats} from "../../actions/message";
 import CloseImg from "../../components/image/close_icon.png"
-import {baseUrl} from "../../globalSetings";
+import {baseServerUrl, baseUrl} from "../../globalSetings";
 
 const Order = () => {
     let { id } = useParams();
@@ -86,7 +86,7 @@ const Order = () => {
                                     <form onSubmit={handleSubmit} onDragEnter={dragEnterHandler} onDragLeave={dragLeaveHandler}
                                           onDragOver={dragEnterHandler}>
                                         <div className="mainImg">
-                                            <img src={baseUrl+":8443/orders/" + user + "/" + mainImg}/>
+                                            <img src={baseServerUrl+":8443/orders/" + user + "/" + mainImg}/>
                                         </div>
                                     </form> :
                                     <div className="mainImg">

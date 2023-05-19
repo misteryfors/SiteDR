@@ -8,7 +8,7 @@ import {createOrder, getOrder, redactOrder} from "../../actions/order";
 import {getChats} from "../../actions/message";
 import {Helmet} from "react-helmet";
 import CloseImg from "../../components/image/close_icon.png"
-import {baseUrl} from "../../globalSetings";
+import {baseServerUrl, baseUrl} from "../../globalSetings";
 
 const NewOrder = () => {
     let { id } = useParams();
@@ -78,7 +78,7 @@ const NewOrder = () => {
         <div>
             <Helmet>
                 <title>Заказать ремонт</title>
-                <link rel="canonical" href={baseUrl+"/newOrder"} />
+                <link rel="canonical" href={baseServerUrl+"/newOrder"} />
                 <meta name="description" content="Форма регистрации заказа" />
             </Helmet>
             {loads==true ?

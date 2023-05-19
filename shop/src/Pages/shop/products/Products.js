@@ -4,6 +4,7 @@ import '../../../components/css/fix.css'
 import {useState, useEffect} from 'react'
 import { initWow } from '../../../wow/wow';
 import boookedIMG from "../../../../src/components/image/BackgroundShop/Police-Tape2.png"
+import {baseServerUrl} from "../../../globalSetings";
 
 const Products=({product})=>{
     useEffect(() => {
@@ -12,7 +13,7 @@ const Products=({product})=>{
     let img;
     if (product.imgs.length!=0)
     {
-        img=<img src={"https://master43.ru:8443/products/"+product._id+"/"+product.imgs[0]}/>
+        img=<img src={baseServerUrl+"/products/"+product._id+"/"+product.imgs[0]}/>
     }
         return(
             <div className="ProductsSlot wow animate__animated animate__fadeIn">
