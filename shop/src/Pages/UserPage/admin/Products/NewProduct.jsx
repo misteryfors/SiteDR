@@ -6,7 +6,7 @@ import {uploadFile} from "../../../../actions/product";
 import "../../../../components/css/NewProd.css";
 import '../../../../components/css/imgList.css'
 import CloseImg from "../../../../components/image/close_icon.png"
-import {baseUrl} from "../../../../globalSetings";
+import {baseServerUrl, baseUrl} from "../../../../globalSetings";
 
 const NewProduct = () => {
     const [mainImg, setMainImg] = useState("")
@@ -100,10 +100,10 @@ const NewProduct = () => {
                                     onDragOver={dragEnterHandler}>
                                     {imgs.length==0 ?
                                         <div className="mainImg">
-                                            <img src={'https://master43.ru/image/plug.png'}/>
+                                            <img src={baseUrl+'/image/plug.png'}/>
                                         </div>:
                                     <div className="mainImg">
-                                        <img src={baseUrl+"/products/" + id + "/" + mainImg}/>
+                                        <img src={baseServerUrl+"/products/" + id + "/" + mainImg}/>
                                     </div>}
                                 </form> :
                                 <div className="mainImg">
@@ -119,7 +119,7 @@ const NewProduct = () => {
                                         <img className="deleteImg_img" onClick={()=>delImg(el)} src={CloseImg} alt=''></img>
                                         </div>
                                         <img className="addImg" onMouseEnter={() => setMainImg(el)}
-                                            src={baseUrl+"/products/" + id + "/" + el}/>
+                                            src={baseServerUrl+"/products/" + id + "/" + el}/>
 
                                     </div>
                                 ))}

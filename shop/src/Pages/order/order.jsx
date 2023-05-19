@@ -86,7 +86,7 @@ const Order = () => {
                                     <form onSubmit={handleSubmit} onDragEnter={dragEnterHandler} onDragLeave={dragLeaveHandler}
                                           onDragOver={dragEnterHandler}>
                                         <div className="mainImg">
-                                            <img src={baseServerUrl+":8443/orders/" + user + "/" + mainImg}/>
+                                            <img src={baseServerUrl+"/orders/" + user + "/" + mainImg}/>
                                         </div>
                                     </form> :
                                     <div className="mainImg">
@@ -102,7 +102,7 @@ const Order = () => {
                                                 <img className="deleteImg_img" onClick={()=>delImg(el)} src={CloseImg} alt=''></img>
                                             </div>
                                             <img className="addImg" onMouseEnter={() => setMainImg(el)}
-                                                 src={baseUrl+":8443/orders/" + user + "/" + el}/>
+                                                 src={baseServerUrl+"/orders/" + user + "/" + el}/>
 
                                         </div>
                                     ))}

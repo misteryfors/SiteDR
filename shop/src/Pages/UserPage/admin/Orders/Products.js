@@ -16,7 +16,7 @@ const Products=({product,setProducts,products})=>{
     {img=<img src={plug}/>
         if (product.imgs.length!=0)
         {
-            img=<img src={baseServerUrl+"/products/"+user+"/"+product.imgs[0]}/>
+            img=<img src={baseServerUrl+"/orders/"+user+"/"+product.imgs[0]}/>
         }else {
 
         }
