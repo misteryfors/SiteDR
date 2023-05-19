@@ -45,6 +45,16 @@ router.post('/registration',
         const newUser = new User({email,password: hashPassword,role:"client",name:email,notice:'Вы успешно зарегистрированны',confirmed:true})
         await newUser.save()
         const token = jwt.sign({id: newUser.id}, config.get("secretKey"), {expiresIn: "2h"})
+
+
+
+        const sUser = await User.findOne({_id:'641336ac79efeb6dad283d86'})
+        const chat = new Chat({firstUser:candidate.id,secondUser:'641336ac79efeb6dad283d86',firstUserName:candidate.name,secondUserName:sUser.name,messages:[],notice:'Поздравляем вы зарегестрированны'})
+        await chat.save()
+        await fileService.createDir(req.filepath+'/orders/'+candidate.id)
+
+
+
         const mailOptions = {
             from: 'master43dotru@mail.ru',
             to: email,
@@ -60,11 +70,6 @@ router.post('/registration',
             }
         });
 
-
-        const sUser = await User.findOne({_id:'641336ac79efeb6dad283d86'})
-        const chat = new Chat({firstUser:candidate.id,secondUser:'641336ac79efeb6dad283d86',firstUserName:candidate.name,secondUserName:sUser.name,messages:[],notice:'Поздравляем вы зарегестрированны'})
-        await chat.save()
-        await fileService.createDir(req.filepath+'/orders/'+candidate.id)
 
     }catch (e){
         console.log(e)
