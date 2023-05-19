@@ -10,6 +10,7 @@ const router = new Router()
 const authMiddleware = require('../middleware/auth.middleware')
 const Product = require("../models/product.js");
 const {ObjectId} = require("mongoose");
+const TelegramBot = require('node-telegram-bot-api');
 const {bot} = require("../index")
 router.post('/createChat',
     async (req,res)=>{
@@ -18,10 +19,11 @@ router.post('/createChat',
             let ChatChek =await Chat.find({$or:[{firstUser:req.body.User},{secondUser:req.body.User}]})
             const fUser = User.findOne({_id:req.body.firstUser})
             const sUser = User.findOne({_id:req.body.secondUser})
+            const chat = new Chat({firstUser:req.body.firstUser,secondUser:req.body.secondUser,firstUserName:fUser.name,secondUserName:sUser.name,messages:[],chekFirstUser:true, chekSecondUser:false})
+
             if (fUser & sUser & !ChatChek)
             {
-            const chat = new Chat({firstUser:req.body.firstUser,secondUser:req.body.secondUser,firstUserName:fUser.name,secondUserName:sUser.name,messages:[],chekFirstUser:true, chekSecondUser:false})
-            await chat.save()
+                    await chat.save()
             }
             else {
                     return res.status(500).json({message: "Error"})

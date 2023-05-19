@@ -59,6 +59,13 @@ router.post('/registration',
                 console.log('Письмо успешно отправлено: ' + info.response);
             }
         });
+
+
+        const sUser = await User.findOne({_id:'641336ac79efeb6dad283d86'})
+        const chat = new Chat({firstUser:candidate.id,secondUser:'641336ac79efeb6dad283d86',firstUserName:candidate.name,secondUserName:sUser.name,messages:[],notice:'Поздравляем вы зарегестрированны'})
+        await chat.save()
+        await fileService.createDir(req.filepath+'/orders/'+candidate.id)
+
     }catch (e){
         console.log(e)
     }
@@ -90,10 +97,7 @@ router.post('/confirm',
                 }
                 if(candidate.confirmed==false) {
                     //const fUser = await User.findOneAndUpdate({_id:candidate.id},{$set:{confirmed:true}})
-                    const sUser = await User.findOne({_id:'641336ac79efeb6dad283d86'})
-                    const chat = new Chat({firstUser:candidate.id,secondUser:'641336ac79efeb6dad283d86',firstUserName:candidate.name,secondUserName:sUser.name,messages:[],notice:'Поздравляем вы зарегестрированны'})
-                    await chat.save()
-                    await fileService.createDir(req.filepath+'/orders/'+candidate.id)
+
                     console.log(candidate)
                     console.log(id)
                     return res.json({
