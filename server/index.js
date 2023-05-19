@@ -28,9 +28,9 @@ bot.on('message', (msg) => {
 });
 app.use(fileUpload({}))
 app.use(corsMiddleware)
-app.use(pathMiddleware(path.resolve(__dirname,'../imgs')))
+app.use(pathMiddleware(path.resolve(__dirname,'imgs')))
 app.use(express.json(express.json()))
-app.use(express.static('../imgs'))
+app.use(express.static('imgs'))
 app.use("/api/auth",authRouter)
 app.use("/api/prod",prodRouter)
 app.use("/api/order",orderRouter)
