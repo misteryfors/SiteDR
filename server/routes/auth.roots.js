@@ -69,7 +69,7 @@ router.post('/registration',
                 console.log('Письмо успешно отправлено: ' + info.response);
             }
         });
-        await fileService.createDir(req.filepath+'/orders/'+candidate.id)
+        await fileService.createDir(req.filepath+'/orders/'+newUser.id)
 
 
     }catch (e){
