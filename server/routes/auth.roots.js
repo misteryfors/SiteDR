@@ -51,7 +51,7 @@ router.post('/registration',
         const sUser = await User.findOne({_id:'641336ac79efeb6dad283d86'})
         const chat = new Chat({firstUser:newUser.id,secondUser:'641336ac79efeb6dad283d86',firstUserName:newUser.name,secondUserName:sUser.name,messages:[],notice:'Поздравляем вы зарегестрированны'})
         await chat.save()
-        await fileService.createDir(req.filepath+'/orders/'+candidate.id)
+
 
 
 
@@ -69,6 +69,7 @@ router.post('/registration',
                 console.log('Письмо успешно отправлено: ' + info.response);
             }
         });
+        await fileService.createDir(req.filepath+'/orders/'+candidate.id)
 
 
     }catch (e){
