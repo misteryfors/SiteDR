@@ -18,7 +18,7 @@ class TelegramController {
 
     send(chatId,msg){
         try {
-            bot.sendMessage(msg)
+            bot.sendMessage(chatId,msg)
         } catch (e) {
             console.log(e)
         }
