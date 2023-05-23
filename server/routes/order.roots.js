@@ -9,8 +9,7 @@ const authMiddleware = require("../middleware/auth.middleware");
 const jwt = require("jsonwebtoken");
 const config = require("config");
 const router = new Router()
-const TelegramBot = require('node-telegram-bot-api');
-const {bot} = require("../index")
+const tgController = require('../controllers/telegramController.js')
 router.post('/upload', fileController.uploadFile)
 router.post('/createOrder',
     [
@@ -29,7 +28,7 @@ router.post('/createOrder',
             console.log(order)
             await order.save()
             await User.updateOne({_id: '641336ac79efeb6dad283d86'},{notice:'Новый заказ'})
-            bot.sendMessage(1759163276, 'Новый заказ! \nАдресс: '+adress+'\nФио: '+ fio+'\nТелефон: '+ phone+'\nТип: '+ type+'\nМарка: '+ mark+'\nВремя в использовании: '+ timeInUse+'\nКомментарий: '+ comment+'\nСрочная: '+ urgency +'\nЖелательное время: '+ time);
+            tgController.send(1759163276, 'Новый заказ! \nАдресс: '+adress+'\nФио: '+ fio+'\nТелефон: '+ phone+'\nТип: '+ type+'\nМарка: '+ mark+'\nВремя в использовании: '+ timeInUse+'\nКомментарий: '+ comment+'\nСрочная: '+ urgency +'\nЖелательное время: '+ time);
             return res.json({order})
         }catch (e){
             console.log(e)

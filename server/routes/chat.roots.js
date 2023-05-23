@@ -10,8 +10,8 @@ const router = new Router()
 const authMiddleware = require('../middleware/auth.middleware')
 const Product = require("../models/product.js");
 const {ObjectId} = require("mongoose");
-const TelegramBot = require('node-telegram-bot-api');
-const {bot} = require("../index")
+const tgController = require("../controllers/telegramController");
+
 router.post('/createChat',
     async (req,res)=>{
         try {
@@ -61,7 +61,7 @@ router.post('/sendMessage',
             if (chat1.firstUser==req.body.user)
             {
                 if(!req.body.order)
-                bot.sendMessage(1759163276, 'Вам сообщение! ');
+                tgController.send(1759163276, 'Вам сообщение! ');
                 await User.updateOne({_id: chat1.secondUser},{notice:'Вам сообщение'})
                 await Chat.updateOne({_id:chat1._id},{chekSecondUser:false})
             }
