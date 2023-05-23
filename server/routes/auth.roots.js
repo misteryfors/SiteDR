@@ -59,7 +59,7 @@ router.post('/registration',
             from: 'master43dotru@mail.ru',
             to: email,
             subject: 'Подтверждение регистрации',
-            html: 'Пожалуйста, подтвердите ваш аккаунт. <a href="http://localhost:433/confirm/' + token + '">Ссылка для подтверждения</a>'
+            html: 'Пожалуйста, подтвердите ваш аккаунт. <a href="https://master43.ru:433/confirm/' + token + '">Ссылка для подтверждения</a>'
         };
 
         transporter.sendMail(mailOptions, (error, info) => {
