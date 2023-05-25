@@ -41,7 +41,7 @@ router.post('/registration',
                 return res.status(400).json({message: 'Пользователь с такой почтой '+email+' уже существует'})
             }
             else
-                User.deleteOne({email})
+                await User.deleteOne({email})
 
         }
         const hashPassword =await bcrypt.hash(password, 15)
