@@ -40,6 +40,9 @@ router.post('/registration',
             if(candidate.confirmed==true) {
                 return res.status(400).json({message: 'User with email '+email+' already exist'})
             }
+            else
+                User.deleteOne({email})
+
         }
         const hashPassword =await bcrypt.hash(password, 15)
         const newUser = new User({email,password: hashPassword,role:"client",name:email,notice:'Вы успешно зарегистрированны',confirmed:false})
@@ -47,18 +50,11 @@ router.post('/registration',
         const token = jwt.sign({id: newUser.id}, config.get("secretKey"), {expiresIn: "2h"})
 
 
-
-
-
-
-
-
-
         const mailOptions = {
             from: 'master43dotru@mail.ru',
             to: email,
             subject: 'Подтверждение регистрации',
-            html: '<div style="display: flex; flex-direction:column; width:100%; jucify-content:center; align-items: center; font-family: "MailSans";  font-size: 2vw; font-weight: bold; "> Пожалуйста, подтвердите ваш аккаунт. <a style="margin-top: 2%; border: 1px solid; padding: 10px; border-radius: 5px; text-decoration: none;" href="http://localhost:443/confirm/' + token + '">Ссылка для подтверждения</a></div>'
+            html: '<div style="display: flex; flex-direction:column; width:100%; jucify-content:center; align-items: center; font-family: "MailSans";  font-size: 2vw; font-weight: bold; "> Пожалуйста, подтвердите ваш аккаунт. <a style="margin-top: 2%; border: 1px solid; padding: 10px; border-radius: 5px; text-decoration: none;" href="https://master43.ru:443/confirm/' + token + '">Ссылка для подтверждения</a></div>'
         };
 
         transporter.sendMail(mailOptions, (error, info) => {
