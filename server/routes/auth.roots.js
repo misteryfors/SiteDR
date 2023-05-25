@@ -42,15 +42,14 @@ router.post('/registration',
             }
         }
         const hashPassword =await bcrypt.hash(password, 15)
-        const newUser = new User({email,password: hashPassword,role:"client",name:email,notice:'Вы успешно зарегистрированны',confirmed:true})
+        const newUser = new User({email,password: hashPassword,role:"client",name:email,notice:'Вы успешно зарегистрированны',confirmed:false})
         await newUser.save()
         const token = jwt.sign({id: newUser.id}, config.get("secretKey"), {expiresIn: "2h"})
 
 
 
-        const sUser = await User.findOne({_id:'641336ac79efeb6dad283d86'})
-        const chat = new Chat({firstUser:newUser.id,secondUser:'641336ac79efeb6dad283d86',firstUserName:newUser.name,secondUserName:sUser.name,messages:[],notice:'Поздравляем вы зарегестрированны'})
-        await chat.save()
+
+
 
 
 
@@ -59,7 +58,7 @@ router.post('/registration',
             from: 'master43dotru@mail.ru',
             to: email,
             subject: 'Подтверждение регистрации',
-            html: 'Пожалуйста, подтвердите ваш аккаунт. <a href="https://master43.ru:433/confirm/' + token + '">Ссылка для подтверждения</a>'
+            html: '<div style="display: flex; flex-direction:column; width:100%; jucify-content:center; align-items: center; font-family: "MailSans";  font-size: 2vw; font-weight: bold; "> Пожалуйста, подтвердите ваш аккаунт. <a style="margin-top: 2%; border: 1px solid; padding: 10px; border-radius: 5px; text-decoration: none;" href="http://localhost:443/confirm/' + token + '">Ссылка для подтверждения</a></div>'
         };
 
         transporter.sendMail(mailOptions, (error, info) => {
@@ -69,7 +68,7 @@ router.post('/registration',
                 console.log('Письмо успешно отправлено: ' + info.response);
             }
         });
-        await fileService.createDir(req.filepath+'/orders/'+newUser.id)
+
 
 
     }catch (e){
@@ -102,6 +101,10 @@ router.post('/confirm',
                     })
                 }
                 if(candidate.confirmed==false) {
+                    await fileService.createDir(req.filepath+'/orders/'+newUser.id)
+                    const sUser = await User.findOne({_id:'641336ac79efeb6dad283d86'})
+                    const chat = new Chat({firstUser:candidate.id,secondUser:'641336ac79efeb6dad283d86',firstUserName:candidate.name,secondUserName:sUser.name,messages:[],notice:'Поздравляем вы зарегестрированны'})
+                    await chat.save()
                     //const fUser = await User.findOneAndUpdate({_id:candidate.id},{$set:{confirmed:true}})
 
                     console.log(candidate)
@@ -195,7 +198,7 @@ router.get('/getNotice', authMiddleware,
             let notice=user.notice
             if (notice!='')
             {
-            console.log(req.user)
+            //console.log(req.user)
             setTimeout(async () => {
                 await User.updateOne({_id: req.user.id},{notice:''})
             }, 4000);
