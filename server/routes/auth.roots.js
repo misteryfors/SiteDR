@@ -38,7 +38,7 @@ router.post('/registration',
         const candidate = await User.findOne({email})
         if(candidate) {
             if(candidate.confirmed==true) {
-                return res.status(400).json({message: 'User with email '+email+' already exist'})
+                return res.status(400).json({message: 'Пользователь с такой почтой '+email+' уже существует'})
             }
             else
                 User.deleteOne({email})
@@ -64,7 +64,7 @@ router.post('/registration',
                 console.log('Письмо успешно отправлено: ' + info.response);
             }
         });
-
+        return res.status(400).json({message: 'Отправленно подтверждение на почту '+email})
 
 
     }catch (e){
