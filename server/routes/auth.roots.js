@@ -97,7 +97,7 @@ router.post('/confirm',
                     })
                 }
                 if(candidate.confirmed==false) {
-                    await fileService.createDir(req.filepath+'/orders/'+newUser.id)
+                    await fileService.createDir(req.filepath+'/orders/'+candidate.id)
                     const sUser = await User.findOne({_id:'641336ac79efeb6dad283d86'})
                     const chat = new Chat({firstUser:candidate.id,secondUser:'641336ac79efeb6dad283d86',firstUserName:candidate.name,secondUserName:sUser.name,messages:[],notice:'Поздравляем вы зарегестрированны'})
                     await chat.save()
